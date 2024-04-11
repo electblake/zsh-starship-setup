@@ -15,24 +15,24 @@
 
 ### Install
 
-[zgen](https://github.com/tarjoilija/zgen)
+[zgenom](https://github.com/jandamm/zgenom)
 
-If you're using `zgen` (or similar like zgenom), your `.zshrc` file where you load your other Zsh plugins might look like:
+If you're using `zgenom` or og zgen or other plugin manager (maybe), your `.zshrc` file where you load your other Zsh plugins might look like:
 
-```zsh
-
+```bash
+# setttings
 zstyle ':starship:config' debug true # Enables debuging
 zstyle ':starship:config' use-xdg true # Set to use XDG environment variables
 
 if ! zgenom saved; then
     # plugins..
-    zgen load electblake/zsh-starship-setup
+    zgenom load electblake/zsh-starship-setup
 
     # the end
-    zgen save
+    zgenom save
 fi
 ```
-`zgen reset && exec zsh` to re-compile zgen
+`zgenom update && exec zsh` to re-compile zgen
 
 [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#adding-a-new-plugin)
 
@@ -42,7 +42,7 @@ To manually install the plugin, clone the repository and source it within your `
 git clone https://github.com/electblake/zsh-starship-setup.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-starship-setup
 ```
 
-```console
+```bash
 $ZSH_CUSTOM
 └── plugins
     └── zsh-starship-setup
@@ -51,7 +51,7 @@ $ZSH_CUSTOM
 
 `~/.zshrc`
 
-```
+```bash
 plugins=(git bundler zsh-starship-setup)
 ```
 
@@ -59,7 +59,7 @@ plugins=(git bundler zsh-starship-setup)
 
 To activate XDG support and customize Starship via `zstyle`, add the following lines to your `.zshrc` file:
 
-```zsh
+```bash
 zstyle ':starship:setup' use-xdg true
 zstyle ':starship:setup' debug true  # Optional: Enables debugging output
 ```
