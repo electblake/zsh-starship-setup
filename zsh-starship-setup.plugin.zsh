@@ -1,7 +1,7 @@
 # Function to set up environment based on XDG Base Directory Specification
 setup_xdg_environment() {
     if zstyle -t ':starship:setup' use-xdg; then
-        local cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/starship"
+        local cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/.starship/cache"
         local config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/starship"
 
         # Ensure directories exist
